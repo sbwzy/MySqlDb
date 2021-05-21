@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="安卓直接访问MySQL数据库示例"
+        android:textColor="#B32CCA"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/btn_query_count"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="查询用户数量"
+        android:textColor="#2196F3"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv_user_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="用户数量为："
+        android:textColor="#FF5722"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="20dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="用户名:"
+                android:textStyle="bold"
+                android:textColor="@color/colorPrimary"
+                android:textSize="20sp"/>
+            <EditText
+                android:id="@+id/et_uname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="请输入用户名"
+                android:text="zhangsan"
+                android:background="@null"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="密    码:"
+                android:textStyle="bold"
+                android:textColor="@color/colorPrimary"
+                android:textSize="20sp"/>
+            <EditText
+                android:id="@+id/et_upass"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:hint="请输入用户密码"
+                android:text="123456"
+                android:background="@null"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="登        录"
+            android:textColor="#2196F3"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+</LinearLayout>
