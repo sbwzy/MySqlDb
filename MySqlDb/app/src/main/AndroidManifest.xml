@@ -11,7 +11,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".UserEditActivity"></activity>
+        <activity android:name=".GoodsAddActivity"></activity>
+        <activity android:name=".GoodsEditActivity" />
+        <activity android:name=".GoodsManagerActivity" />
+        <activity android:name=".GoodsManageActivity" />
+        <activity android:name=".UserEditActivity" />
         <activity android:name=".UserAddActivity" />
         <activity android:name=".UserManagerActivity" />
         <activity android:name=".MainActivity">

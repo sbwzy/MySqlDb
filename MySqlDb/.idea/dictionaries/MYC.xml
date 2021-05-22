@@ -2,6 +2,13 @@
   <dictionary name="MYC">
     <words>
       <w>bookdb</w>
+      <w>byid</w>
+      <w>gcreate</w>
+      <w>gname</w>
+      <w>gnumber</w>
+      <w>goodsinfo</w>
+      <w>houge</w>
+      <w>isadmin</w>
       <w>jdbc</w>
       <w>padd</w>
       <w>pback</w>

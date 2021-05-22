@@ -10,27 +10,10 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="安卓直接访问MySQL数据库示例"
+        android:text="仓库管理系统"
+        android:layout_gravity="center"
         android:textColor="#B32CCA"
-        android:textSize="20sp"
-        android:textStyle="bold" />
-
-    <Button
-        android:id="@+id/btn_query_count"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="查询用户数量"
-        android:textColor="#2196F3"
-        android:textSize="20sp"
-        android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/tv_user_count"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="用户数量为："
-        android:textColor="#FF5722"
-        android:textSize="20sp"
+        android:textSize="34sp"
         android:textStyle="bold" />
 
     <LinearLayout
@@ -54,7 +37,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="请输入用户名"
-                android:text="zhangsan"
+                android:text="houge"
                 android:background="@null"
                 android:textSize="20sp"
                 android:textStyle="bold"/>
@@ -83,6 +66,17 @@
                 android:textSize="20sp"
                 android:textStyle="bold"/>
         </LinearLayout>
+
+        <CheckBox
+            android:id="@+id/cb_admin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="是否为管理员用户"
+            android:textColor="#2196F3"
+            android:background="@null"
+            android:textSize="20sp"
+            android:textStyle="bold">
+        </CheckBox>
 
         <Button
             android:id="@+id/btn_login"
