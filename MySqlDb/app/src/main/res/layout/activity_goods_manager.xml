@@ -14,14 +14,23 @@
         android:layout_height="wrap_content">
         <ImageButton
             android:id="@+id/btn_gReturn"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:background="#FFFFFF"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
             android:src="@drawable/preturn"/>
+        <ImageButton
+            android:id="@+id/btn_gSearch"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:background="#FFFFFF"
+            android:src="@drawable/psearch"
+            android:layout_marginLeft="200dp"/>
         <ImageButton
             android:id="@+id/btn_gAdd"
             android:layout_alignParentRight="true"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:background="#FFFFFF"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
             android:src="@drawable/padd"/>
     </RelativeLayout>
 

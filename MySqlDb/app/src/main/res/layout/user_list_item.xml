@@ -13,7 +13,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="1."
-            android:textSize="16sp"
+            android:textSize="20sp"
             android:textColor="#000"
             android:textStyle="bold"/>
         <TextView
@@ -22,7 +22,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
             android:text="zhangsan"
-            android:textSize="16sp"
+            android:textSize="20sp"
             android:textColor="#03A9F4"
             android:textStyle="bold"/>
         <TextView
@@ -31,7 +31,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
             android:text="123456"
-            android:textSize="16sp"
+            android:textSize="20sp"
             android:textColor="#FF5722"
             android:textStyle="bold"/>
     </LinearLayout>
@@ -46,7 +46,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
             android:text="2020-05-01 11:11:22"
-            android:textSize="16sp"
+            android:textSize="18sp"
             android:textColor="#4CAF50"
             android:textStyle="bold"/>
 
@@ -57,15 +57,17 @@
 
             <ImageButton
                 android:id="@+id/btn_edit"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:background="#FFFFFF"
                 android:src="@drawable/pedit" />
 
             <ImageButton
                 android:id="@+id/btn_delete"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
                 android:layout_marginLeft="5dp"
+                android:background="#FFFFFF"
                 android:src="@drawable/pdelete" />
         </LinearLayout>
     </RelativeLayout>

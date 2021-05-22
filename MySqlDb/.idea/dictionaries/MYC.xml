@@ -2,6 +2,7 @@
   <dictionary name="MYC">
     <words>
       <w>bookdb</w>
+      <w>bygname</w>
       <w>byid</w>
       <w>gcreate</w>
       <w>gname</w>
@@ -15,6 +16,7 @@
       <w>pdelete</w>
       <w>pedit</w>
       <w>preturn</w>
+      <w>psearch</w>
       <w>uname</w>
       <w>upass</w>
       <w>userinfo</w>

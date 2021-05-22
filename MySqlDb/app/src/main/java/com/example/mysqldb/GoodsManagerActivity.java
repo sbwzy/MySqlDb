@@ -22,7 +22,7 @@ import java.util.List;
 
 public class GoodsManagerActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private ImageButton btn_add, btn_return;  //增加图片按钮，返回图片按钮
+    private ImageButton btn_add, btn_return, btn_search;  //增加图片按钮，返回图片按钮
 
     private GoodsDao goodsDao;    //货物数据库操作实例
 
@@ -47,6 +47,7 @@ public class GoodsManagerActivity extends AppCompatActivity implements View.OnCl
     private void initView(){
         btn_add = findViewById(R.id.btn_gAdd);
         btn_return = findViewById(R.id.btn_gReturn);
+        btn_search = findViewById(R.id.btn_gSearch);
 
         lv_goods = findViewById(R.id.lv_goods);
 
@@ -56,6 +57,7 @@ public class GoodsManagerActivity extends AppCompatActivity implements View.OnCl
 
         btn_return.setOnClickListener(this);
         btn_add.setOnClickListener(this);
+        btn_search.setOnClickListener(this);
     }
 
     private void loadGoodsDb(){
@@ -144,8 +146,12 @@ public class GoodsManagerActivity extends AppCompatActivity implements View.OnCl
             finish();
         }
         else if(v.getId() == R.id.btn_gAdd){
-            //打开添加用户界面
+            //打开添加货物界面
             Intent intent = new Intent(this, GoodsAddActivity.class);
+            startActivityForResult(intent, 1);
+        }else if(v.getId() == R.id.btn_gSearch){
+            //打开搜索货物界面
+            Intent intent = new Intent(this, GoodsSearchActivity.class);
             startActivityForResult(intent, 1);
         }
     }

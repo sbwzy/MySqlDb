@@ -40,27 +40,29 @@ public class GoodsDao extends DbOpenHelper {
      * id 商品编号
      * Goodsinfo 实例
      * */
-    public Goodsinfo getGoodsByid(int id){
-        Goodsinfo item = null;
+    public List<Goodsinfo>getGoodsBygname(String gname){
+        List<Goodsinfo> list = new ArrayList<>();
         try{
             getConnection();    //取得连接信息
-            String sql = "select * from goodsinfo where id=?";
+            String sql = "select * from goodsinfo where gname=?";
             pStmt = conn.prepareStatement(sql);
-            pStmt.setString(1, String.valueOf(id));
+            pStmt.setString(1, gname);
             rs = pStmt.executeQuery();
-            if (rs.next()){
-                item = new Goodsinfo();
+            while (rs.next()){
+                Goodsinfo item = new Goodsinfo();
                 item.setId(rs.getInt("id"));
                 item.setGname(rs.getString("gname"));
                 item.setGnumber(rs.getString("gnumber"));
                 item.setCreateDt(rs.getString("createDt"));
+
+                list.add(item);
             }
         }catch (Exception ex){
             ex.printStackTrace();
         }finally {
             closeAll();
         }
-        return item;
+        return list;
     }
 
     /*
