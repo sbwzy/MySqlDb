@@ -2,6 +2,8 @@ package com.example.mysqldb;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -81,5 +83,58 @@ public class GoodsSearchActivity extends AppCompatActivity {
             lvGoodsinfoAdapter.setGoodsinfoList(goodsinfoList);
             lvGoodsinfoAdapter.notifyDataSetChanged();
         }
+
+        //修改按钮的操作
+        lvGoodsinfoAdapter.setOnEditButtonClickListener(new OnEditButtonClickListener() {
+            @Override
+            public void onEditBtnClick(View view, int position) {
+                //修改方法
+                Goodsinfo item = goodsinfoList.get(position);
+                Bundle bundle = new Bundle();
+                bundle.putSerializable("goodsEdit", item);
+                Intent intent = new Intent(GoodsSearchActivity.this, GoodsEditActivity.class);
+                intent.putExtras(bundle);
+                startActivityForResult(intent, 1);
+            }
+        });
+
+        //删除按钮的操作
+        lvGoodsinfoAdapter.setOnDelBtnClickListener(new OnDelBtnClickListener() {
+            @Override
+            public void onDelBtnClick(View view, int position) {
+                //删除方法
+                final Goodsinfo item = goodsinfoList.get(position);
+                new AlertDialog.Builder(GoodsSearchActivity.this)
+                        .setTitle("删除确认")
+                        .setMessage("您确定要删除:id:[" + item.getId() + "],商品名为:[" + item.getGname() + "]的货物信息吗？")
+                        .setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                doDelGoods(item.getId());
+                            }
+                        })
+                        .setNegativeButton("取消", null)
+                        .create().show();
+            }
+        });
+    }
+
+    /*
+     * 执行删除商品的方法
+     * id 要删除商品的id
+     * */
+    private void doDelGoods(final int id){
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                final int iRow = goodsDao.delGoods(id);
+                mainHandler.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        LoadGoodsDb();   //重新加载数据
+                    }
+                });
+            }
+        }).start();
     }
 }
