@@ -21,8 +21,7 @@ import org.w3c.dom.Text;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
-    private Button btn_query_count, btn_login;
-    private TextView tv_user_count;
+    private Button btn_login;
 
     private Integer isAdmin = 0;
 
@@ -33,16 +32,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private UserDao dao;  //用户数据库操作类
     private Handler mainHandler ;   //主线程
 
-    private Handler handler = new Handler() {
-        @Override
-        public void handleMessage(@NonNull Message msg) {
-            //super.handleMessage(msg);
-            if(msg.what == 0){
-                int count = (Integer)msg.obj;
-                tv_user_count.setText("数据库中的用户数量为:" + count);
-            }
-        }
-    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,9 +42,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void initView(){
-        /*btn_query_count = findViewById(R.id.btn_query_count);
-        tv_user_count = findViewById(R.id.tv_user_count);*/
-
         et_uname = findViewById(R.id.et_uname);
         et_upass = findViewById(R.id.et_upass);
 
@@ -126,7 +112,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             }else{
                                 if (isAdmin == 0){
                                     CommonUtils.showLongMsg(MainActivity.this, "登陆成功,进入货物管理");
-                                    //调用用户管理界面
+                                    //调用货物管理界面
                                     Intent intent = new Intent(MainActivity.this, GoodsManagerActivity.class);
                                     startActivity(intent);
                                 }else if(isAdmin == 1){

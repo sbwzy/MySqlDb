@@ -12,7 +12,7 @@ import java.sql.Statement;
 
 public class DbOpenHelper {
     private static final String CLS = "com.mysql.jdbc.Driver";
-    private static final String URL = "jdbc:mysql://192.168.1.153:3306/bookdb";
+    private static final String URL = "jdbc:mysql://172.20.10.9:3306/bookdb";
     private static final String USER = "sbw";
     private static final String PWD = "123456";
 

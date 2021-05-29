@@ -1,5 +1,6 @@
 package com.example.mysqldb;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
@@ -136,5 +137,13 @@ public class GoodsSearchActivity extends AppCompatActivity {
                 });
             }
         }).start();
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode == 1 && resultCode == 1){    //操作成功
+            LoadGoodsDb();   //重新加载数据
+        }
     }
 }
